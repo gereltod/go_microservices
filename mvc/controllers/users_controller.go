@@ -29,7 +29,7 @@ func GetUser(resp http.ResponseWriter, req *http.Request) {
 
 	log.Printf("about to user_id %v", userID)
 
-	user, apiErr := services.GetUser(userID)
+	user, apiErr := services.UsersService.GetUser(userID)
 
 	if apiErr != nil {
 		jsonValue, _:=json.Marshal(apiErr)
